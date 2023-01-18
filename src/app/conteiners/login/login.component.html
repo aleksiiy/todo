@@ -1,0 +1,21 @@
+<div class="login">
+  <mat-icon class="login__icon" [fontIcon]="'mood'" [inline]="true"></mat-icon>
+  <app-input
+    [placeholder]="'Enter your email'"
+    [icon]="'home'"
+    [validationRegex]="regexEmail"
+    [warningText]="'Email'"
+    [name]="'email'"
+    [type]="'email'"
+    (response)="handlerVariables($event)"
+  ></app-input>
+  <app-input
+    [placeholder]="'Enter your password'"
+    [icon]="'lock'"
+    [validationRegex]="regexPass"
+    [warningText]="'Minimum eight characters, at least one letter and one number'"
+    [name]="'pass'"
+    [type]="'password'"
+    (response)="handlerVariables($event)"
+  ></app-input>
+</div>

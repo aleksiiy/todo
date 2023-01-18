@@ -1,0 +1,11 @@
+<div class="input" [ngClass]="{
+   warning: !validationNotify
+}">
+  <mat-icon
+    class="input__icon"
+    *ngIf="icon"
+    aria-hidden="false"
+    [fontIcon]="icon"></mat-icon>
+  <input autocomplete="off" class="input__space" [type]="type" (input)="validation()" [placeholder]="placeholder" [(ngModel)]="value" />
+  <span class="input__warning" attr.data-warningText="{{warningText}}"></span>
+</div>
