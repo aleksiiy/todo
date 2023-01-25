@@ -6,20 +6,36 @@ import { AppComponent } from './app.component';
 import {StoreModule} from "@ngrx/store";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {FormsModule} from "@angular/forms";
-import { LoginComponent } from './conteiners/login/login.component';
-import { InputComponent } from './components/input/input.component';
 
 // services
 import {AuthService} from "./services/auth.service";
 
-// ddd
+// modules
 import {MatIconModule} from '@angular/material/icon';
+import {HttpClientModule} from "@angular/common/http";
+
+// redux
+
+
+// components
+import { InputComponent } from './components/input/input.component';
+import { ButtonComponent } from './components/button/button.component';
+import { LoadingComponent } from './components/loading/loading.component';
+
+// containers
+import { LoginComponent } from './conteiners/login/login.component';
+import { RegisterComponent } from './conteiners/register/register.component';
+import { BoardComponent } from './conteiners/board/board.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    InputComponent
+    InputComponent,
+    ButtonComponent,
+    RegisterComponent,
+    LoadingComponent,
+    BoardComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +45,8 @@ import {MatIconModule} from '@angular/material/icon';
       maxAge: 10
     }),
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

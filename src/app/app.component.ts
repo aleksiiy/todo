@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter} from '@angular/core';
+import {AuthService} from "./services/auth.service";
 
 interface AppStore {
 
 }
-
-
 
 @Component({
   selector: 'app-root',
@@ -13,5 +12,5 @@ interface AppStore {
 })
 
 export class AppComponent {
-  title: string = 'toDo';
+  constructor(auth: AuthService) {}
 }

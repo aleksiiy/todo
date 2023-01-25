@@ -1,15 +1,15 @@
 @import "src/variables.scss";
 
-app-login {
+app-register {
   background: inherit;
 }
 
-.login * {
+.register * {
   position: relative;
   width: 100%;
 }
 
-.login {
+.register {
   padding: 40px 50px;
   border-radius: 20px;
   display: inline-flex;

@@ -1,5 +1,5 @@
-<div class="login">
-  <mat-icon class="login__icon" [fontIcon]="'mood'" [inline]="true"></mat-icon>
+<div class="register">
+  <mat-icon class="register__icon" [fontIcon]="'person_add'" [inline]="true"></mat-icon>
   <app-input
     [placeholder]="'Enter your email'"
     [icon]="'home'"
@@ -13,13 +13,13 @@
     [placeholder]="'Enter your password'"
     [icon]="'lock'"
     [validationRegex]="regexPass"
-    [warningText]="'Minimum 6 characters'"
-    [name]="'password'"
+    [warningText]="'Minimum eight characters, at least one letter and one number'"
+    [name]="'pass'"
     [type]="'password'"
     (response)="handlerVariables($event)"
   ></app-input>
-  <div class="login__button">
-    <app-button [icon]="'person_add'" [text]="'register'" [routerLink]="['/register']"></app-button>
-    <app-button [icon]="'login'" [text]="'login'" (response)="login()"></app-button>
+  <div class="register__button">
+    <app-button [icon]="'login'" [text]="'login'" [routerLink]="['/login']"></app-button>
+    <app-button [icon]="'person_add'" [text]="'register'" (response)="register()"></app-button>
   </div>
 </div>

@@ -1,0 +1,4 @@
+<div [ngClass]="{button: true, disable: disable}" (click)="returnEvent()">
+  <mat-icon class="button__icon" *ngIf="icon" [fontIcon]="icon"></mat-icon>
+  <div class="button__event">{{text}}</div>
+</div>

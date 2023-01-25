@@ -1,15 +1,10 @@
-//ligth
-$ligth: #EAE3EA;
-$ligth_1: #ae93ae;
-$ligth_2: #7a5b7a;
-$ligth_3: #513d51;
-$ligth_4: #281e28;
+@import "src/variables.scss";
 
 
 .input {
   height: 40px;
   padding: 8px 13px 0px;
-  border-bottom: 2px solid $ligth;
+  border-bottom: 2px solid $light;
   position: relative;
   display: flex;
   align-items: center;
@@ -17,6 +12,7 @@ $ligth_4: #281e28;
   width: calc(100% - 26px);
 
   &__icon {
+    max-width: 24px;
     min-width: 24px;
     height: 24px;
   }
@@ -28,20 +24,20 @@ $ligth_4: #281e28;
     border-width: 0;
     outline: none;
     width: 100%;
-    color: $ligth;
+    color: $light;
     padding: 0;
     margin-bottom: -3px;
     z-index: 2;
 
     &::placeholder {
-      color: $ligth;
+      color: $light;
     }
 
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus {
       -webkit-background-clip: text !important;
-      -webkit-text-fill-color: $ligth !important;
+      -webkit-text-fill-color: $light !important;
     }
   }
 

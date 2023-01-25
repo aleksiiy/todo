@@ -1,0 +1,25 @@
+.loading {
+  display: flex;
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 0;
+  top: 0;
+  background-color: rgba(141, 152, 137, 0.39);
+  opacity: 0;
+  transition: 0.5s;
+
+  &.active {
+    width: 100%;
+    opacity: 1;
+    height: 100%;
+  }
+
+  &.hidden {
+    left: auto;
+    right: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+}

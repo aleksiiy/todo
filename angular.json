@@ -31,7 +31,8 @@
               "src/assets/images"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/variables.scss"
             ],
             "scripts": []
           },
@@ -78,7 +79,10 @@
               "browserTarget": "toDo:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+          "options": {
+            "proxyConfig": "src/proxy.conf.json"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
