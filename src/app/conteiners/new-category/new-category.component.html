@@ -1,0 +1,6 @@
+<div class="create-category" [ngClass]="{active: show}">
+  <app-input [name]="'name'" [value]="data.name" placeholder="Entry name" (response)="handlerVariables($event)"></app-input>
+  <app-input [name]="'nameIcon'" [value]="data.nameIcon" placeholder="Entry name of icon" (response)="handlerVariables($event)"></app-input>
+  <app-input [name]="'categoryUrl'" [value]="data.categoryUrl" placeholder="Entry url" (response)="handlerVariables($event)"></app-input>
+  <app-button text="add" (response)="appendCategory()"></app-button>
+</div>

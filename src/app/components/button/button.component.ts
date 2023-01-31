@@ -8,7 +8,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 export class ButtonComponent {
   @Input() icon: string = '';
   @Input() iconSide: 'left' | 'right' = 'right';
-  @Input() text: string = 'Button';
+  @Input('text') text: string = 'Button';
   @Input() disable: boolean = false;
 
   @Output() response: EventEmitter<void> = new EventEmitter<void>();

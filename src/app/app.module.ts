@@ -7,25 +7,26 @@ import {StoreModule} from "@ngrx/store";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {FormsModule} from "@angular/forms";
 
-// services
-import {AuthService} from "./services/auth.service";
-
 // modules
 import {MatIconModule} from '@angular/material/icon';
 import {HttpClientModule} from "@angular/common/http";
 
 // redux
 
-
 // components
 import { InputComponent } from './components/input/input.component';
 import { ButtonComponent } from './components/button/button.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { SelectComponent } from './components/select/select.component';
+import { HeaderItemComponent } from './components/header-item/header-item.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 // containers
 import { LoginComponent } from './conteiners/login/login.component';
 import { RegisterComponent } from './conteiners/register/register.component';
 import { BoardComponent } from './conteiners/board/board.component';
+import { NewCategoryComponent } from './conteiners/new-category/new-category.component';
+import { NewItemComponent } from './conteiners/new-item/new-item.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,12 @@ import { BoardComponent } from './conteiners/board/board.component';
     ButtonComponent,
     RegisterComponent,
     LoadingComponent,
-    BoardComponent
+    BoardComponent,
+    SelectComponent,
+    HeaderItemComponent,
+    MenuComponent,
+    NewCategoryComponent,
+    NewItemComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +54,7 @@ import { BoardComponent } from './conteiners/board/board.component';
     MatIconModule,
     HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

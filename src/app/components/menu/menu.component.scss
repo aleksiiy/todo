@@ -1,0 +1,23 @@
+.menu {
+  padding: 30px 20px 60px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    color: white;
+    width: 100%;
+
+    .menu__item-text {
+
+    }
+
+    &:hover {
+
+    }
+  }
+}

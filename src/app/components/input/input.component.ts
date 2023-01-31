@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {EmitOptions} from "@angular/compiler-cli";
 
 export interface IInput {
   text: string
@@ -13,13 +12,13 @@ export interface IInput {
   styleUrls: ['./input.component.scss'],
 })
 export class InputComponent {
-  @Input() placeholder: string = 'Enter value';
-  @Input() icon: string = '';
+  @Input('placeholder') placeholder: string = 'Enter value';
+  @Input('icon') icon: string = '';
   @Input() validationRegex: string = '';
-  @Input() warningText: string = 'Text is not valid';
-  @Input() value: string = '';
-  @Input() name: string = '';
-  @Input() type: 'email' | 'password' | 'text' = 'text';
+  @Input('warningText') warningText: string = 'Text is not valid';
+  @Input('value') value: string = '';
+  @Input('name') name: string = '';
+  @Input('type') type: 'email' | 'password' | 'text' = 'text';
 
   @Output() response: EventEmitter<IInput> = new EventEmitter<IInput>();
 
@@ -45,6 +44,6 @@ export class InputComponent {
       text: this.value,
       name: this.name,
       validation: this.validationNotify
-    })
+    });
   }
 }

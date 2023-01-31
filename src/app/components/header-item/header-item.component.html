@@ -1,0 +1,13 @@
+<div class="header-item" (click)="openDetailsItems()" (focusout)="close()" tabindex="0">
+  <mat-icon [fontIcon]="'person'"></mat-icon>
+  <span *ngIf="details" class="header-item__arrow-down"></span>
+  <div class="header-item__details" *ngIf="showDetails">
+    <div
+      class="header-item__details__item"
+      *ngFor="let item of itemsDetail"
+      (click)="item.action()">
+      <mat-icon *ngIf="item.icon" [fontIcon]="item.icon"></mat-icon>
+      <span>{{item.text}}</span>
+    </div>
+  </div>
+</div>

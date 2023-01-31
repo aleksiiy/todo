@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 })
 export class AuthService {
 
-  userId: string = ""
+  private userId: string = ""
   constructor(
     private http: HttpClient,
     private loading: LoadingService,
@@ -43,5 +43,34 @@ export class AuthService {
           }
         )
       )
+  }
+
+  register(user: Interfaces.IUser): Observable<{ data: { user: Interfaces.IUser } }> {
+    return this.http.post<{ data: { user: Interfaces.IUser } }>("/api/v1/auth/register", user)
+      .pipe(
+        tap(
+          ({data}) => {
+            this.userId = data.user.id;
+          }
+        )
+      )
+  }
+
+  logout(): void {
+    this.loading.status.emit(true);
+    this.http.delete('/api/v1/auth/logout').subscribe(
+      () => {
+        this.userId = "";
+        this.router.navigateByUrl('/login');
+        this.loading.status.emit(false);
+      }, (err) => {
+        console.error(err);
+        this.loading.status.emit(false);
+      }
+    );
+  }
+
+  isLogin(): boolean{
+    return !!this.userId;
   }
 }
