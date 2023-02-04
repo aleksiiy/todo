@@ -2,9 +2,9 @@ import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {IInput} from "../../components/input/input.component";
 import { Router } from "@angular/router";
 import {AuthService} from "../../services/auth.service";
-import * as Interfaces from "../../shered/interfaces"
 import {LoadingService} from "../../services/loading.service";
 import {Subscription} from "rxjs";
+import {InterfacesUser} from "../../shered/interfaces";
 
 @Component({
   selector: 'app-login',
@@ -15,7 +15,7 @@ import {Subscription} from "rxjs";
 export class LoginComponent implements OnInit, OnDestroy {
   regexEmail: string = "([-!#-\'*+/-9=?A-Z^-~]+(\\.[-!#-\'*+/-9=?A-Z^-~]+)*|\"([]!#-[^-~ \\t]|(\\\\[\\t -~]))+\")@[0-9A-Za-z]([0-9A-Za-z-]{0,61}[0-9A-Za-z])?(\\.[0-9A-Za-z]([0-9A-Za-z-]{0,61}[0-9A-Za-z])?)+";
   regexPass: string = "^(?=.*[A-z])[A-z\d]{6,}$";
-  data: Interfaces.IUser = {
+  data: InterfacesUser.INewUser = {
     icon: "user",
     email: "",
     password: ""

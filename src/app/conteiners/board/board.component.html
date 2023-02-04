@@ -4,15 +4,15 @@
       logo
     </div>
     <div>
-      <app-header-item [itemsDetail]="testData"></app-header-item>
+      <app-header-item [itemsDetail]="dataHeader"></app-header-item>
     </div>
   </div>
   <div class="board__menu">
     <div>
-      <app-new-category [show]="createCategory" (response)="createCategory = false"></app-new-category>
+      <app-new-category [show]="createCategory" (response)="saveNewCategory($event)"></app-new-category>
       <span *ngIf="!createCategory" (click)="createCategory = true">add</span>
     </div>
-    <app-menu></app-menu>
+    <app-menu *ngIf="categories" [categories]="categories"></app-menu>
   </div>
   <div class="board__context">
 

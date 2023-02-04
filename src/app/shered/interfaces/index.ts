@@ -1,5 +1,5 @@
-import IUser from "./user.interface";
+import * as InterfacesUser from "./user.interface";
 
 export {
-  IUser
+  InterfacesUser
 }

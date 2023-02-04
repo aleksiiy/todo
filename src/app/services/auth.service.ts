@@ -5,6 +5,7 @@ import {Observable} from "rxjs";
 import {tap} from "rxjs/operators";
 import {LoadingService} from "./loading.service";
 import {Router} from "@angular/router";
+import {InterfacesUser} from "../shered/interfaces";
 @Injectable({
   providedIn: 'root'
 })
@@ -34,8 +35,8 @@ export class AuthService {
     });
   }
 
-  login(user: Interfaces.IUser): Observable<{ data: { user: Interfaces.IUser } }> {
-    return this.http.post<{ data: { user: Interfaces.IUser } }>("/api/v1/auth/login", user)
+  login(user: InterfacesUser.INewUser): Observable<{ data: { user: InterfacesUser.IUser} }> {
+    return this.http.post<{ data: { user: InterfacesUser.IUser } }>("/api/v1/auth/login", user)
       .pipe(
         tap(
           ({data}) => {
@@ -45,8 +46,8 @@ export class AuthService {
       )
   }
 
-  register(user: Interfaces.IUser): Observable<{ data: { user: Interfaces.IUser } }> {
-    return this.http.post<{ data: { user: Interfaces.IUser } }>("/api/v1/auth/register", user)
+  register(user: InterfacesUser.INewUser): Observable<{ data: { user: InterfacesUser.IUser } }> {
+    return this.http.post<{ data: { user: InterfacesUser.IUser } }>("/api/v1/auth/register", user)
       .pipe(
         tap(
           ({data}) => {

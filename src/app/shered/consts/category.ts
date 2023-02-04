@@ -1,5 +1,5 @@
 export default JSON.parse(JSON.stringify({
-  name: '',
-  nameIcon: '',
-  categoryUrl: ''
+  name: "",
+  nameIcon: "",
+  categoryUrl: ""
 }));

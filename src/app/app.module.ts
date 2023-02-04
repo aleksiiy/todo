@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {StoreModule} from "@ngrx/store";
+import modules from "./redux";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {StoreModule} from "@ngrx/store";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {FormsModule} from "@angular/forms";
 
@@ -27,6 +27,7 @@ import { RegisterComponent } from './conteiners/register/register.component';
 import { BoardComponent } from './conteiners/board/board.component';
 import { NewCategoryComponent } from './conteiners/new-category/new-category.component';
 import { NewItemComponent } from './conteiners/new-item/new-item.component';
+import {categoryReducer} from "./redux/category/category.reducer";
 
 @NgModule({
   declarations: [
@@ -46,7 +47,9 @@ import { NewItemComponent } from './conteiners/new-item/new-item.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({
+      category: categoryReducer
+    }),
     StoreDevtoolsModule.instrument({
       maxAge: 10
     }),

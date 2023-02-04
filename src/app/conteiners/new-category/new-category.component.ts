@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IInput} from "../../components/input/input.component";
 import defaultCategory from "../../shered/consts/category";
+import {INewCategory} from "../../redux/category/category.model";
 
 @Component({
   selector: 'app-new-category',
@@ -13,7 +14,7 @@ export class NewCategoryComponent implements OnInit {
   show: boolean = false;
 
   @Output()
-  response: EventEmitter<void> = new EventEmitter<void>();
+  response: EventEmitter<INewCategory> = new EventEmitter();
   data = {...defaultCategory};
   constructor() {
 
@@ -25,7 +26,9 @@ export class NewCategoryComponent implements OnInit {
 
   appendCategory() {
     console.log(this.data);
-    this.response.emit();
+    this.response.emit({
+      ...this.data
+    });
     this.data = {...defaultCategory}
   }
 

@@ -3,8 +3,8 @@ import {Router} from "@angular/router";
 import {IInput} from "../../components/input/input.component";
 import {AuthService} from "../../services/auth.service";
 import {LoadingService} from "../../services/loading.service";
-import * as Interfaces from "../../shered/interfaces";
 import {Subscription} from "rxjs";
+import {InterfacesUser} from "../../shered/interfaces";
 
 @Component({
   selector: 'app-register',
@@ -22,7 +22,7 @@ export class RegisterComponent implements OnDestroy {
     private authService: AuthService,
     private loading: LoadingService) {}
 
-  data: Interfaces.IUser = {
+  data: InterfacesUser.INewUser = {
     icon: "user",
     email: "",
     password: ""
