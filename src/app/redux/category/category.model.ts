@@ -4,7 +4,7 @@ export interface INewCategory {
   name: string // "Home",
   nameIcon: string //"home",
   categoryUrl: string // "home",
-  attachments: IAttachment[]
+  attachments?: IAttachment[]
 }
 
 export interface ICategory extends INewCategory{

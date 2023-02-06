@@ -16,4 +16,8 @@ export class CategoryApi {
   newCategory(payload: INewCategory): Observable<{data: ICategory}> {
     return this.http.post<{ data: ICategory }>("/api/v1/categories", payload);
   }
+
+  showCategory(uuid: string): Observable<{ data: ICategory }> {
+    return this.http.get<{ data: ICategory }>(`/api/v1/categories/${uuid}`)
+  }
 }

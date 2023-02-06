@@ -1,7 +1,8 @@
 <aside class="menu">
   <div
     class="menu__item"
-    *ngFor="let item of items">
+    *ngFor="let item of items"
+    [routerLink]="'/board/' + item.categoryUrl">
     <mat-icon [fontIcon]="item.nameIcon"></mat-icon>
     <span class="menu__item-text">{{item.name}}</span>
   </div>

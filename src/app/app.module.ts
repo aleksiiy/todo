@@ -11,7 +11,9 @@ import {FormsModule} from "@angular/forms";
 import {MatIconModule} from '@angular/material/icon';
 import {HttpClientModule} from "@angular/common/http";
 
-// redux
+// rxjs
+import {categoryReducer} from "./redux/category/category.reducer";
+import {attachmentReducer} from "./redux/attachment/attachment.reducer";
 
 // components
 import { InputComponent } from './components/input/input.component';
@@ -27,7 +29,7 @@ import { RegisterComponent } from './conteiners/register/register.component';
 import { BoardComponent } from './conteiners/board/board.component';
 import { NewCategoryComponent } from './conteiners/new-category/new-category.component';
 import { NewItemComponent } from './conteiners/new-item/new-item.component';
-import {categoryReducer} from "./redux/category/category.reducer";
+import { ContentComponent } from './conteiners/content/content.component';
 
 @NgModule({
   declarations: [
@@ -42,13 +44,15 @@ import {categoryReducer} from "./redux/category/category.reducer";
     HeaderItemComponent,
     MenuComponent,
     NewCategoryComponent,
-    NewItemComponent
+    NewItemComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({
-      category: categoryReducer
+      category: categoryReducer,
+      attachment: attachmentReducer
     }),
     StoreDevtoolsModule.instrument({
       maxAge: 10

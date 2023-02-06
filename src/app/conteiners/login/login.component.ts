@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   login() {
     this.loading.status.emit(true);
     this.lSub = this.authService.login(this.data).subscribe((res) => {
-      this.router.navigateByUrl('/board');
+      this.router.navigateByUrl(this.authService.previousUrl ? this.authService.previousUrl : "/board");
     }, (error) => {
       console.error(error);
       this.loading.status.emit(false);

@@ -6,6 +6,7 @@ import {Observable} from "rxjs";
 import {Store} from "@ngrx/store";
 import {ApiService} from "../../services/api.service";
 import * as CategoryActions from "../../redux/category/category.actions";
+import {Router} from "@angular/router";
 
 interface AppState {
   category: ICategory[]
@@ -32,7 +33,8 @@ export class BoardComponent implements OnInit {
     private loading: LoadingService,
     private authService: AuthService,
     private store: Store<AppState>,
-    private api: ApiService) {
+    private api: ApiService,
+    private router: Router) {
   //
     this.categories = this.store.select('category');
 
@@ -44,7 +46,9 @@ export class BoardComponent implements OnInit {
     })
     this.api.getCategories().subscribe((res) => {
       this.store.dispatch(new CategoryActions.Load(res.data))
-      this.loading.status.emit(false);
+      if (this.router.url === "/board") {
+        this.router.navigateByUrl("/board/home");
+      }
     })
   }
 
@@ -58,7 +62,7 @@ export class BoardComponent implements OnInit {
       this.store.dispatch(new CategoryActions.Add(res.data));
       this.loading.status.emit(false);
       this.createCategory = false;
-    })
+    }, (err) => this.api.apiError(err))
   }
 
 }

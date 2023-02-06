@@ -9,15 +9,19 @@ import {
 import {Observable, of} from "rxjs";
 import {Injectable} from "@angular/core";
 import {AuthService} from "../../services/auth.service";
+import {LoadingService} from "../../services/loading.service";
 
 @Injectable({
   providedIn: "root"
 })
 export class AuthGuard implements CanActivate, CanActivateChild {
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router, private loading: LoadingService) {
   }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
+    if (!["/login", "/register"].includes(state.url)) {
+      this.authService.previousUrl = state.url;
+    }
     if (this.authService.isLogin()) {
       return of(true);
     } else {

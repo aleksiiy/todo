@@ -5,8 +5,7 @@ export const CategoryActions = {
   LOAD_CATEGORIES: "[CATEGORY] LOAD",
   EDIT_CATEGORY: "[CATEGORY] EDIT",
   ADD_CATEGORY: "[CATEGORY] ADD",
-  REMOVE_CATEGORY: "[CATEGORY] REMOVE",
-  GET_ATTACHMENTS: "[CATEGORY] GET ATTACHMENTS"
+  REMOVE_CATEGORY: "[CATEGORY] REMOVE"
 }
 
 export class Load implements Action {
@@ -28,9 +27,5 @@ export class Remove implements Action {
   readonly type = CategoryActions.REMOVE_CATEGORY
   constructor(public payload: ICategory) {}
 }
-export class GetAttachments implements Action {
-  readonly type = CategoryActions.GET_ATTACHMENTS
-  constructor(public payload: ICategory) {}
-}
 
-export type All = Edit | Add | Remove | GetAttachments;
+export type All = Edit | Add | Remove;
